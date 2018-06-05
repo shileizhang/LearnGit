@@ -35,7 +35,7 @@ git checkout -- readme.txt意思就是，把readme.txt文件在工作区的修�
 ！git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”
 
 <远程仓库>
-//添加远程库
+//添加远程库（本地库与远程库建立联系）
  git remote add origin git@github.com:shileizhang/LearnGit.git 
 	远程库的名字就是origin  实际库名为LearnGit
 	
