@@ -1,0 +1,37 @@
+git init
+
+<在Git仓库里对一个文件进行时光穿梭>
+
+//add 与 rm比较
+git add XXX.txt(可反复多次使用，添加多个文件)（向版本库添加）
+	实际上就是把文件修改添加到暂存区	
+git rm XXX.txt用于删除文件（从版本库删除）
+ ！版本库中删除文件和工作区中删除文件的不同
+	手动删除文件时的git status 是changes not stage for commit，需要git rm XXX.txt将其变为changes to be commit 状态
+	同样可以直接使用git rm 直接删除工作区文件并且git status是changes to be commit状态
+	
+git commit -m "提交的描述信息"（每次提交都是一个版本有commit id号对应）
+	实际上就是把暂存区的所有内容提交到当前分支
+	git commit只负责把暂存区的修改提交
+	commit之后暂存区就没有任何内容了
+
+git status可以让我们时刻掌握仓库当前的状态
+git diff查看差异
+
+git log查看历史纪录
+	git log --pretty=oneline一行显示简略信息
+git reflog用来记录你的每一次命令(所有的记录命令)
+
+//！！两者的差异（reset回退版本 checkout撤销修改）
+git reset --hard HEAD^（时间线上的穿梭）
+	HEAD表示当前版本指针，HEAD^表示上一个，HEAD^^上两个版本
+	HEAD~100表示上第100个版本
+git checkout -- readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：
+	一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+	一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+	总之，就是让这个文件回到最近一次git commit或git add时的状态。
+！！git checkout HEAD~1 --xx.txt 文件回退到上一个版本的内容
+！版本库中文件删除之后 git checkout使用会报错，因为版本库中已经没有了该文件
+！git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”
+
+<远程仓库>
