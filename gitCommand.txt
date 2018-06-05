@@ -38,7 +38,21 @@ git checkout -- readme.txt意思就是，把readme.txt文件在工作区的修�
 //添加远程库
  git remote add origin git@github.com:shileizhang/LearnGit.git 
 	远程库的名字就是origin  实际库名为LearnGit
- git push命令，把本地库的内容推送到远程，实际上是把当前分支推送到远程分支。
+	
+//分支推送和拉取命令
+git push命令，把本地库的内容推送到远程，实际上是把当前分支推送到远程分支。
+	git push -u origin master
 	由于远程库是空的，我们第一次推送master分支时，加上了-u参数，
 	Git不但会把本地的master分支内容推送的远程新的master分支，
 	还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
+	
+	！！git push <远程主机名> <本地分支名>:<远程分支名>
+	
+	说明：git push origin master :如果省略远程分支名，则表示将本地分支推送与之存在”追踪关系”的远程分支(通常两者同名)，
+	如果该远程分支不存在，则会被新建。
+	git push origin :master :如果省略本地分支名，则表示删除指定的远程分支，因为这等同于推送一个空的本地分支到远程分支，
+	这条命令是删除远程分支
+	
+git pull
+git pull <远程主机> <远程分支>:<本地分支>
+	如果省略本地分支，则将自动合并到当前所在分支上
