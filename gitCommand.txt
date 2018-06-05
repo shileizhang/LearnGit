@@ -70,6 +70,7 @@ git branch(查看当前分支) git branch命令会列出所有分支，当前分
 
 git merge 命令用于合并指定分支到当前分支
 	本地合并分支
+git log --graph命令可以看到分支合并图
 
 查看分支：git branch
 创建分支：git branch <name>
