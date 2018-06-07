@@ -1,3 +1,3 @@
 nihao
-add 1
-add 2
+git checkout file   //撤销修改到前一个add或commit状态
+git checkout commitID file //回退到commitID版本的file状态
