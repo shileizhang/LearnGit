@@ -1,3 +1,10 @@
+<<<<<<< HEAD
 nihao
 git checkout file   //撤销修改到前一个add或commit状态
 git checkout commitID file //回退到commitID版本的file状态
+=======
+nihao
+你好
+dsd
+这是
+>>>>>>> 6490d8cb13c23c87b62f6aa5528aa764ad3becde
